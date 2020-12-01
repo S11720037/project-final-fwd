@@ -12,6 +12,7 @@ class Main extends React.Component{
 		super(props)
 		this.state = {
 			success: false,
+			searchMovie: 'arter',
 		}
 	}
 
@@ -27,14 +28,19 @@ class Main extends React.Component{
       	})
 	}
 
+	// get callback value from search form
+	callbackFunction = (childData) => {
+		this.setState({searchMovie: childData
+	})}
 
 	render(){
 		if(this.state.success === true){	
 			return(
 				<div className="container-sm mt-4">
 
-					<Search />
+					<Search Callback={this.callbackFunction} searchMovie={this.state.searchMovie}/>
 
+					<b>{this.state.searchMovie}</b>
 					<div className="row row-cols-1 row-cols-md-3">
 						{this.state.movies.results.map(i => <Movie key={i.id} name={i.title} overview={i.overview} poster={i.poster_path}/>)} 
 					</div>

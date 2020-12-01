@@ -6,7 +6,7 @@ class Search extends React.Component{
 	constructor(props){
 		super(props)
 		this.state = {
-			text: ""
+			text: this.props.searchMovie
 		}
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,12 +15,15 @@ class Search extends React.Component{
 
 	handleChange(event) {
     	this.setState({text: event.target.value});
-    	console.log(this.state.text);
   	}
+
 
   	handleSubmit(event) {
     	alert('A name was submitted: ' + this.state.text);
     	event.preventDefault();
+
+    	// send value to parent
+    	this.props.Callback(this.state.text);
   	}
 
 	render(){
@@ -28,7 +31,7 @@ class Search extends React.Component{
 			<form onSubmit={this.handleSubmit}>
 				<div className="form-group">
 					{/*<label for="search">Email address</label>*/}
-					<input type="text" className="form-control" id="search" name="search" placeholder="Search Movie..." onChange={this.handleChange} />
+					<input type="text" className="form-control" id="search" name="search" placeholder="Search Movie..." onChange={this.handleChange} value={this.state.text}/>
 				</div>
 				<button type="submit" className="btn btn-primary">Search</button>
 			</form>
