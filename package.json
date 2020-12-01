@@ -1,5 +1,6 @@
 {
   "name": "project-final-frontend-web-development",
+  "homepage":"https://project-final-fwd.tendean.my.id/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
