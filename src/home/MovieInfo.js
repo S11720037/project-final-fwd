@@ -28,8 +28,7 @@ class MovieInfo extends React.Component{
         			success: true,
         			video: result,
         		})
-
-      	})
+      		})
 		}
 		else{
 			console.log('tidak ada')
@@ -48,33 +47,26 @@ class MovieInfo extends React.Component{
 		}
 		else{
 			return(
-				<div className="container-sm mt-4 rounded shadow">
-
-					<div className="card mb-3" style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500/${this.state.video.backdrop_path})`,backgroundPosition: 'center',backgroundSize: 'cover',backgroundRepeat: 'no-repeat'}}>
+				<div className="container-fluid pt-4">
+					
+					<div className="card mb-3">
 						<div className="row no-gutters">
-							<div className="col-md-4">
+							<div className="col-md-4 p-2 shadow-sm">
 								<img src={`https://image.tmdb.org/t/p/w500/${this.state.video.poster_path}`} className="card-img" alt="..."/>
 							</div>
-							<div className="col-md-8 p-2">
-								<div className="card-body bg-white rounded shadow-lg">
-									<h2 className="card-title">Card title</h2>
-									<p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-									<p className="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+							<br />
+
+							<div className="col-md-8">
+								<div className="card-body">
+									<h3 className="card-title text-center">{this.state.video.original_title}</h3>
+									<hr className="p-0 m-0"/>
+									<small className="text-muted label label-success">Release Date: {this.state.video.release_date}</small>
+
+									<p className="card-text mt-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-{/*
-				<div className="jumbotron" style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500/${this.state.video.backdrop_path})`,backgroundPosition: 'center',backgroundSize: 'cover',backgroundRepeat: 'no-repeat', maxHeight:"200px"}}>
-
-					<img src={`https://image.tmdb.org/t/p/w500/${this.state.video.poster_path}`} className="rounded mx-auto d-block" alt="..." style={{width:"50%"}}/>
-
-				</div>*/}
-
-
-
-
-				afadsfnaskdfjalks
 				</div>
 			)
 		}

@@ -1,11 +1,3 @@
 .bg-white {
 	background-color: white;
 }
-
-.simple-blur {
-	filter: blur(5px);
-}
-
-.no-blur {
-	filter: blur(0);
-}
