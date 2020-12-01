@@ -13,10 +13,6 @@ function Movie(props){
     	overview = props.overview;
     }
 
-	function handleClick(e) {
-		e.preventDefault();
-	}
-
 	return(
 		<div className="col mb-4">
 			<div className="card h-100 shadow-sm">

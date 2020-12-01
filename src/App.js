@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
 import {
   BrowserRouter as Router,
   Switch,
