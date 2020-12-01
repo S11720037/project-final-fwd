@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 
 class Search extends React.Component{
@@ -17,13 +18,23 @@ class Search extends React.Component{
     	this.setState({text: event.target.value});
   	}
 
-
   	handleSubmit(event) {
-    	alert('A name was submitted: ' + this.state.text);
     	event.preventDefault();
 
-    	// send value to parent
-    	this.props.Callback(this.state.text);
+	    // search movie
+	    // just work when textbox not empty
+    	if((this.state.text.length) > 0){		
+			axios.get(`https://api.themoviedb.org/3/search/movie/?api_key=44fe7789424456fbecf20efec24af7a4&query=${this.state.text}`)
+	      	.then(res => {
+	        	const result = res.data;
+
+	        	// send value to parent
+	    		this.props.Callback(result);
+	      	})
+    	}
+    	else{
+    		alert('Can\'t empty')
+    	}
   	}
 
 	render(){

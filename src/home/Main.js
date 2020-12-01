@@ -12,7 +12,7 @@ class Main extends React.Component{
 		super(props)
 		this.state = {
 			success: false,
-			searchMovie: 'arter',
+			searchMovie: '',
 		}
 	}
 
@@ -29,9 +29,12 @@ class Main extends React.Component{
 	}
 
 	// get callback value from search form
+	// and replace "movies" data
 	callbackFunction = (childData) => {
-		this.setState({searchMovie: childData
-	})}
+		this.setState({
+			movies: childData
+		})
+	}
 
 	render(){
 		if(this.state.success === true){	
