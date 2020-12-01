@@ -52,7 +52,7 @@ class Main extends React.Component{
 		else{
 			return(
 				<div className="container-sm mt-4 main-background rounded shadow p-2">
-						<h2 className="text-center">arter</h2>
+						<h2 className="text-center">Please Wait</h2>
 				</div>
 			)
 		}
