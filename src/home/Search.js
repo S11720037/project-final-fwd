@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './Search.css';
 
 
 class Search extends React.Component{
@@ -42,7 +43,7 @@ class Search extends React.Component{
 			<div className="input-group mb-3">
 				<input type="text" className="form-control" id="search" name="search" placeholder="Search Movie..." onChange={this.handleChange} value={this.state.text}/>
 				<div className="input-group-append">
-					<button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Search</button>
+					<button type="submit" className="btn btn-purple" onClick={this.handleSubmit}>Search</button>
 				</div>
 			</div>
 		)
