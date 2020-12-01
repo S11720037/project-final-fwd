@@ -39,13 +39,12 @@ class Search extends React.Component{
 
 	render(){
 		return(
-			<form onSubmit={this.handleSubmit}>
-				<div className="form-group">
-					{/*<label for="search">Email address</label>*/}
-					<input type="text" className="form-control" id="search" name="search" placeholder="Search Movie..." onChange={this.handleChange} value={this.state.text}/>
+			<div className="input-group mb-3">
+				<input type="text" className="form-control" id="search" name="search" placeholder="Search Movie..." onChange={this.handleChange} value={this.state.text}/>
+				<div className="input-group-append">
+					<button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Search</button>
 				</div>
-				<button type="submit" className="btn btn-primary">Search</button>
-			</form>
+			</div>
 		)
 	}
 }
