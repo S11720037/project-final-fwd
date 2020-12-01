@@ -1,6 +1,7 @@
 import React from 'react';
 import './Main.css';
 import Movie from './Movie';
+import Search from './Search';
 
 import axios from 'axios';
 
@@ -31,6 +32,9 @@ class Main extends React.Component{
 		if(this.state.success === true){	
 			return(
 				<div className="container-sm mt-4">
+
+					<Search />
+
 					<div className="row row-cols-1 row-cols-md-3">
 						{this.state.movies.results.map(i => <Movie key={i.id} name={i.title} overview={i.overview} poster={i.poster_path}/>)} 
 					</div>
