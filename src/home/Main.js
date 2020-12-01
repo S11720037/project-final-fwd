@@ -15,7 +15,8 @@ class Main extends React.Component{
 	}
 
 	componentDidMount(){
-		axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=44fe7789424456fbecf20efec24af7a4&page=1`)
+		// get trending movies for home page
+		axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=44fe7789424456fbecf20efec24af7a4&page=1`)
       	.then(res => {
         	const result = res.data;
         	this.setState({
@@ -28,14 +29,11 @@ class Main extends React.Component{
 
 	render(){
 		if(this.state.success === true){	
-			console.log(this.state.movies.results);
-			for(var i of this.state.movies.results){
-				console.log(i);
-			}
 			return(
-				<div className="container-sm mt-4 main-background rounded shadow p-2">
-				berhasil
-				{this.state.movies.results.map(i => <Movie key={i.id} name={i.title} overview={i.overview} poster={i.poster_path}/>)} 
+				<div className="container-sm mt-4">
+					<div className="row row-cols-1 row-cols-md-3">
+						{this.state.movies.results.map(i => <Movie key={i.id} name={i.title} overview={i.overview} poster={i.poster_path}/>)} 
+					</div>
 				</div>
 			)
 		}
