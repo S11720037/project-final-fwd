@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 
 function Movie(props){
 
@@ -13,10 +13,14 @@ function Movie(props){
     	overview = props.overview;
     }
 
+	function handleClick(e) {
+		e.preventDefault();
+	}
+
 	return(
 		<div className="col mb-4">
 			<div className="card h-100 shadow-sm">
-				<img src={`https://image.tmdb.org/t/p/w500/${props.poster}`} className="card-img-top" alt={props.name} />
+				<Link to={`/detail/${props.movie_id}/`}><img src={`https://image.tmdb.org/t/p/w500/${props.poster}`} className="card-img-top" alt={props.name} /></Link>
 				<div className="card-body">
 					<h5 className="card-title text-center">{props.name}</h5>
 					<p className="card-text">{overview}</p>
