@@ -29,23 +29,23 @@ class MovieInfo extends React.Component{
         			video: result,
         		})
       		})
-		}
-		else{
-			console.log('tidak ada')
+      		.catch((err) => {
+      			//for invalid movie id
+      			alert(err)
+      		});
 		}
 	}
 
 
-	render(){	
-		console.log(this.state.success)
+	render(){
 		if(this.state.success !== true){		
 			return(
-				<div className="container-sm mt-4 rounded shadow bg-white">
-					sabar
+				<div className="text-center mt-5">
+					<h2 className="text-center">Please wait...</h2>
 				</div>
 			)
 		}
-		else{
+		else if(this.state.success === true){
 			return(
 				<div className="container-fluid pt-4">
 					
