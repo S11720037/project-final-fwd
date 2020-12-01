@@ -12,7 +12,7 @@ class Main extends React.Component{
 		super(props)
 		this.state = {
 			success: false,
-			searchMovie: '',
+			movie: '',
 		}
 	}
 
@@ -41,9 +41,8 @@ class Main extends React.Component{
 			return(
 				<div className="container-sm mt-4">
 
-					<Search Callback={this.callbackFunction} searchMovie={this.state.searchMovie}/>
+					<Search Callback={this.callbackFunction} />
 
-					<b>{this.state.searchMovie}</b>
 					<div className="row row-cols-1 row-cols-md-3">
 						{this.state.movies.results.map(i => <Movie key={i.id} name={i.title} overview={i.overview} poster={i.poster_path} movie_id={i.id}/>)} 
 					</div>
@@ -53,7 +52,7 @@ class Main extends React.Component{
 		else{
 			return(
 				<div className="container-sm mt-4 main-background rounded shadow p-2">
-				sabar
+						<h2 className="text-center">arter</h2>
 				</div>
 			)
 		}

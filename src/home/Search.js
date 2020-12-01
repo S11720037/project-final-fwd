@@ -7,7 +7,7 @@ class Search extends React.Component{
 	constructor(props){
 		super(props)
 		this.state = {
-			text: this.props.searchMovie
+			text: ''
 		}
 
 		this.handleSubmit = this.handleSubmit.bind(this);
