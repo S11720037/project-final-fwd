@@ -1,7 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 import {Link} from "react-router-dom";
-//import Popper from 'popper.js';
+import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
