@@ -15,10 +15,10 @@ function Navbar(){
 			<div className="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul className="navbar-nav mr-auto">
 					<li className="nav-item active">
-						<Link className="nav-link" to="/">Home</Link>
+						<Link className="nav-link" to="/project-final-fwd/">Home</Link>
 					</li>
 					<li className="nav-item active">
-						<Link className="nav-link" to="/about">About</Link>
+						<Link className="nav-link" to="/project-final-fwd/about">About</Link>
 					</li>
 				</ul>
 			</div>
