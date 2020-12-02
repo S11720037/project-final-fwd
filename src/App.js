@@ -23,10 +23,10 @@ function App(){
                     <Route exact path="/project-final-fwd/">
                         <Main />
                     </Route>
-                    <Route exact path="/project-final-fwd/about/about">
+                    <Route exact path="/project-final-fwd/about/">
                         <About />
                     </Route>
-                    <Route path="/project-final-fwd/detail">
+                    <Route path="/project-final-fwd/detail/">
                         <MovieInfo />
                     </Route>
                 </Switch>
