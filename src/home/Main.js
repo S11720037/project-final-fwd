@@ -2,17 +2,15 @@ import React from 'react';
 import './Main.css';
 import Movie from './Movie';
 import Search from './Search';
-
 import axios from 'axios';
-
+import {Redirect} from 'react-router-dom';
 
 class Main extends React.Component{
 
 	constructor(props){
 		super(props)
 		this.state = {
-			success: false,
-			movie: '',
+			status: '',
 		}
 	}
 
@@ -22,7 +20,7 @@ class Main extends React.Component{
       	.then(res => {
         	const result = res.data;
         	this.setState({
-        		success: true,
+        		status: 'top-movies',
         		movies: result,
         	});
       	})
@@ -32,12 +30,13 @@ class Main extends React.Component{
 	// and replace "movies" data
 	callbackFunction = (childData) => {
 		this.setState({
-			movies: childData
+			movies: childData,
+			status: 'search',
 		})
 	}
 
 	render(){
-		if(this.state.success === true){
+		if(this.state.status === 'top-movies'){
 			// exclude when movies doesn't have poster
 			const movies = this.state.movies.results.filter(i => i.poster_path!=null);
 			return(
@@ -51,6 +50,27 @@ class Main extends React.Component{
 				</div>
 			)
 		}
+		if(this.state.status === 'search'){
+			if(this.state.movies.results.length === 0){			
+				return(
+					<Redirect to="/404/" />
+				)
+			}
+			else{
+				// exclude when movies doesn't have poster
+				const movies = this.state.movies.results.filter(i => i.poster_path!=null);
+				return(
+					<div className="container-sm mt-4">
+
+						<Search Callback={this.callbackFunction} />
+
+						<div className="row row-cols-1 row-cols-md-3">
+							{movies.map(i => <Movie key={i.id} name={i.title} overview={i.overview} poster={i.poster_path} movie_id={i.id}/>)} 
+						</div>
+					</div>
+				)
+			}
+		}
 		else{
 			return(
 				<div className="container-sm mt-4 main-background rounded shadow p-2">
@@ -60,5 +80,6 @@ class Main extends React.Component{
 		}
 	}
 }
+
 
 export default Main;

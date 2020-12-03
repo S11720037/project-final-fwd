@@ -2,6 +2,7 @@ import React from 'react';
 import './MovieInfo.css';
 import axios from 'axios';
 import Disquss from './Disqus';
+import {Redirect} from 'react-router-dom';
 
 class MovieInfo extends React.Component{
 

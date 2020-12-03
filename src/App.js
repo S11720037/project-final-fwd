@@ -11,6 +11,7 @@ import Navbar from './home/Navbar';
 import Main from './home/Main';
 import About from './about/About';
 import MovieInfo from './home/MovieInfo';
+import NotFound from './home/NotFound';
 
 function App(){
 
@@ -28,6 +29,9 @@ function App(){
                     </Route>
                     <Route path="/detail/">
                         <MovieInfo />
+                    </Route>
+                    <Route path="/404/">
+                        <NotFound />
                     </Route>
                 </Switch>
             </React.Fragment>
