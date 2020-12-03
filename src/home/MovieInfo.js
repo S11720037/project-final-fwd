@@ -1,6 +1,7 @@
 import React from 'react';
 import './MovieInfo.css';
 import axios from 'axios';
+import Disquss from './Disqus';
 
 class MovieInfo extends React.Component{
 
@@ -66,6 +67,8 @@ class MovieInfo extends React.Component{
 								</div>
 							</div>
 						</div>
+						<hr />
+						<Disquss identifier={window.location.href.split('/')[4]}/>
 					</div>
 				</div>
 			)

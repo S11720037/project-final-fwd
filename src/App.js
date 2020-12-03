@@ -20,13 +20,13 @@ function App(){
                 <Navbar />
 
                 <Switch>
-                    <Route exact path="/project-final-fwd/">
+                    <Route exact path="/">
                         <Main />
                     </Route>
-                    <Route exact path="/project-final-fwd/about/">
+                    <Route exact path="/about/">
                         <About />
                     </Route>
-                    <Route path="/project-final-fwd/detail/">
+                    <Route path="/detail/">
                         <MovieInfo />
                     </Route>
                 </Switch>
