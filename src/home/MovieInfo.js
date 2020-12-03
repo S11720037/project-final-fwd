@@ -47,6 +47,7 @@ class MovieInfo extends React.Component{
 			)
 		}
 		else if(this.state.success === true){
+			// this.state.video.genres.map(i => console.log(i))
 			return(
 				<div className="container-fluid pt-4">
 					
@@ -64,6 +65,22 @@ class MovieInfo extends React.Component{
 									<small className="text-muted label label-success">Release Date: {this.state.video.release_date}</small>
 
 									<p className="card-text mt-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+									<p>
+									Status:<br />
+									<span className="btn btn-sm btn-danger m-1">{this.state.video.status}</span>
+									<span className="btn btn-sm btn-danger m-1">{this.state.video.release_date}</span>
+									</p>
+
+									<p>
+									Genre:<br />
+									{this.state.video.genres.map(i => <span key={i.id} className="btn btn-success btn-sm m-1">{i.name}</span>)}
+									</p>
+
+									<p>
+									Score:<br />
+									<span className="btn btn-sm btn-primary">{this.state.video.vote_average} from {this.state.video.vote_count} users</span>
+									</p>
 								</div>
 							</div>
 						</div>
