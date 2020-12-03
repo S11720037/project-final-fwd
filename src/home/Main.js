@@ -37,14 +37,16 @@ class Main extends React.Component{
 	}
 
 	render(){
-		if(this.state.success === true){	
+		if(this.state.success === true){
+			// exclude when movies doesn't have poster
+			const movies = this.state.movies.results.filter(i => i.poster_path!=null);
 			return(
 				<div className="container-sm mt-4">
 
 					<Search Callback={this.callbackFunction} />
 
 					<div className="row row-cols-1 row-cols-md-3">
-						{this.state.movies.results.map(i => <Movie key={i.id} name={i.title} overview={i.overview} poster={i.poster_path} movie_id={i.id}/>)} 
+						{movies.map(i => <Movie key={i.id} name={i.title} overview={i.overview} poster={i.poster_path} movie_id={i.id}/>)} 
 					</div>
 				</div>
 			)
