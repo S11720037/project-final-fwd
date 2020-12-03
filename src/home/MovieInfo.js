@@ -9,7 +9,7 @@ class MovieInfo extends React.Component{
 	constructor(props){
 		super(props)
 		this.state = {
-			success: false,
+			status: 0,
 		}
 
 		this.getVideoInfo = this.getVideoInfo.bind(this)
@@ -27,27 +27,22 @@ class MovieInfo extends React.Component{
       		.then(res => {
         		const result = res.data;
         		this.setState({
-        			success: true,
+        			status: 200,
         			video: result,
         		})
       		})
       		.catch((err) => {
-      			//for invalid movie id
-      			alert(err)
+      			this.setState({
+      				status: 404
+      			})
       		});
 		}
 	}
 
 
 	render(){
-		if(this.state.success !== true){		
-			return(
-				<div className="text-center mt-5">
-					<h2 className="text-center">Please wait...</h2>
-				</div>
-			)
-		}
-		else if(this.state.success === true){
+		if(this.state.status === 200){	
+
 			// this.state.video.genres.map(i => console.log(i))
 			return(
 				<div className="container-fluid pt-4">
@@ -88,6 +83,18 @@ class MovieInfo extends React.Component{
 						<hr />
 						<Disquss identifier={window.location.href.split('/')[4]}/>
 					</div>
+				</div>
+			)	
+		}
+		else if(this.state.status === 404){
+			return(
+				<Redirect to="/404/" />
+			)
+		}
+		else{
+			return(
+				<div className="text-center mt-5">
+					<h2 className="text-center">Please wait...</h2>
 				</div>
 			)
 		}
