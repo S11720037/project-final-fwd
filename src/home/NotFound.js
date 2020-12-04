@@ -3,6 +3,9 @@ import {Link} from 'react-router-dom';
 
 
 function NotFound(){
+
+	document.title = "404 | S11720037"
+
 	return(
 		<div className="container-sm mt-4 main-background rounded shadow p-2 text-center">
 				<h2>Not Found!</h2>

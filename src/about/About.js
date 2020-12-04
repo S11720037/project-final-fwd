@@ -3,6 +3,9 @@ import React from 'react';
 class About extends React.Component{
 
 	render(){
+
+		document.title = "About | S11720037"
+
 		return(
 			<div className="container-sm mt-4 pb-3 rounded shadow bg-white">
 				<br />

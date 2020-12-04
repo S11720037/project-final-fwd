@@ -36,6 +36,9 @@ class Main extends React.Component{
 
 	render(){
 		if(this.state.status === 'top-movies'){
+
+			document.title = "Top Movies | S11720037"
+
 			// exclude when movies doesn't have poster
 			const movies = this.state.movies.results.filter(i => i.poster_path!=null);
 			return(
@@ -51,6 +54,9 @@ class Main extends React.Component{
 		}
 		else if(this.state.status === 'search'){
 			if(this.state.movies.results.length === 0){			
+
+				document.title = "hmm"
+
 				return(
 					<div className="container-sm mt-4 mb-3">
 

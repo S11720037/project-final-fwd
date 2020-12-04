@@ -43,7 +43,9 @@ class MovieInfo extends React.Component{
 	render(){
 		if(this.state.status === 200){	
 
-			// this.state.video.genres.map(i => console.log(i))
+			// change window title
+			document.title = this.state.video.original_title + " | S11720037"
+
 			return(
 				<div className="container-fluid pt-4">
 					
@@ -92,6 +94,8 @@ class MovieInfo extends React.Component{
 			)
 		}
 		else{
+
+
 			return(
 				<div className="text-center mt-5">
 					<h2 className="text-center">Please wait...</h2>
