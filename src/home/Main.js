@@ -3,7 +3,6 @@ import './Main.css';
 import Movie from './Movie';
 import Search from './Search';
 import axios from 'axios';
-import {Redirect} from 'react-router-dom';
 
 class Main extends React.Component{
 
@@ -50,10 +49,18 @@ class Main extends React.Component{
 				</div>
 			)
 		}
-		if(this.state.status === 'search'){
+		else if(this.state.status === 'search'){
 			if(this.state.movies.results.length === 0){			
 				return(
-					<Redirect to="/404/" />
+					<div className="container-sm mt-4 mb-3">
+
+					<Search Callback={this.callbackFunction} />
+
+					<div className="card text-white">
+						<img src="https://pbs.twimg.com/media/C5uvTF-WMAADlB7?format=jpg&name=small" className="card-img" alt="Satania" />
+					</div>
+					<h3 className="text-center"><a href="https://animemoe.us/" target="_blank" rel="noreferrer">arter tendean</a></h3>
+				</div>
 				)
 			}
 			else{
