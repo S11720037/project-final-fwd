@@ -90,7 +90,7 @@ class MovieInfo extends React.Component{
 		}
 		else if(this.state.status === 404){
 			return(
-				<Redirect to="/404/" />
+				<Redirect to="/project-final-fwd//404/" />
 			)
 		}
 		else{
