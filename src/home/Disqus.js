@@ -6,7 +6,7 @@ function Disquss(props){
 
     const disqusShortname = "your-site-shortname"
     const disqusConfig = {
-      url: "http://localhost:3000",
+      url: "https://s11720037.github.io/project-final-fwd/",
       identifier: props.identifier,
     }
 
