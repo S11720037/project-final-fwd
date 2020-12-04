@@ -36,7 +36,7 @@ class Search extends React.Component{
     	}
     	else{
 
-    		document.title = "S11720037"
+    		document.title = "Top Movies | S11720037"
 
     		axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=44fe7789424456fbecf20efec24af7a4&page=1`)
 	      	.then(res => {
