@@ -20,7 +20,7 @@ class MovieInfo extends React.Component{
 	}
 
 	getVideoInfo(){
-		var video_id = window.location.href.split('/')[4]
+		var video_id = window.location.href.split('/')[5]
 
 		if(video_id !== undefined){
 			axios.get(`https://api.themoviedb.org/3/movie/${video_id}?api_key=44fe7789424456fbecf20efec24af7a4`)
