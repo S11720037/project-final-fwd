@@ -16,7 +16,7 @@ function Movie(props){
 	return(
 		<div className="col mb-4">
 			<div className="card h-100 shadow-sm">
-				<Link to={`/detail/${props.movie_id}/`}><img src={`https://image.tmdb.org/t/p/w500/${props.poster}`} className="card-img-top" alt={props.name} /></Link>
+				<Link to={`/project-final-fwd/detail/${props.movie_id}/`}><img src={`https://image.tmdb.org/t/p/w500/${props.poster}`} className="card-img-top" alt={props.name} /></Link>
 				<div className="card-body">
 					<h5 className="card-title text-center">{props.name}</h5>
 					<p className="card-text">{overview}</p>

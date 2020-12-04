@@ -21,16 +21,16 @@ function App(){
                 <Navbar />
 
                 <Switch>
-                    <Route exact path="/">
+                    <Route exact path="/project-final-fwd/">
                         <Main />
                     </Route>
-                    <Route exact path="/about/">
+                    <Route exact path="/project-final-fwd/about/">
                         <About />
                     </Route>
-                    <Route path="/detail/">
+                    <Route path="/project-final-fwd/detail/">
                         <MovieInfo />
                     </Route>
-                    <Route path="/404/">
+                    <Route path="/project-final-fwd/404/">
                         <NotFound />
                     </Route>
                 </Switch>
